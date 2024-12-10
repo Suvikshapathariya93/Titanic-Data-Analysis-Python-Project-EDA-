@@ -11,6 +11,21 @@
 
 ## Introduction
 
+**🚢 Titanic Dataset:** Data Analysis
+The Titanic dataset is one of the most famous datasets in data science, often used for beginners to practice exploratory data analysis (EDA) and machine learning. This project focuses on analyzing the dataset to uncover key insights about the passengers and their survival. By leveraging tools like Python, Pandas, and visualization libraries, we aim to answer interesting questions and provide a comprehensive view of the data.
+
+**The goal of this project is to:**
+
+Explore and preprocess the Titanic dataset.
+Identify patterns and trends in passenger demographics and survival rates.
+Visualize key insights using various Python libraries.
+Highlight important factors that influenced survival, such as gender, age, and class.
+
+**Tools Used🛠️:**
+- Language : Python
+- Library : Pandas, Numpy, Matplotlib, Seaborn
+- IDE : Google colab
+
 
 ## Import Required Libraries
 
