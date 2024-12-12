@@ -112,6 +112,29 @@ sns.catplot(x='Survived', col='Sex', hue='Pclass', kind='count', data=df)
 - ```data=df```: Uses the Titanic dataset stored in the DataFrame df.
 - ```plt.show()```: Displays the generated plot.
 
+5. Visualize the age distribution of passengers in the dataset as a Histogram.
+```python
+#Purpose: This code visualizes the age distribution of passengers in the dataset as a histogram. It provides insights into the age demographics of passengers, such as the most common age groups.
+sns.displot(df['Age'].dropna(), kde=False, color='darkgreen', bins=40)
+plt.show()
+```
+- ```sns.displot```: Creates a distribution plot using the Seaborn library.
+- ```df['Age']```: Specifies the "Age" column from the dataset to analyze the distribution of ages.
+- ```.dropna()```: Removes any missing values (NaN) from the "Age" column to ensure only valid data is plotted.
+- ```kde=False```: Disables the Kernel Density Estimate (KDE) curve, leaving only the histogram to represent the data.
+- ```color='darkgreen'```: Sets the color of the bars in the histogram to dark green.
+- ```bins=40```: Divides the range of ages into 40 equal intervals (bins), ensuring a detailed view of the distribution.
+- ```plt.show()```: Displays the plot.
+
+6. Visualize the number of passengers with varying counts of Siblings/Spouse aboard.
+```python
+#This count plot provides a visual summary of the number of passengers with varying counts of siblings/spouses aboard. It helps analyze the family size distribution among passengers.
+sns.countplot(x = 'SibSp', data = df)
+```
+- ```sns.countplot```: Creates a count plot using the Seaborn library.
+- ```x='SibSp'```: Specifies the "SibSp" column on the x-axis, which represents the number of siblings and spouses each passenger had aboard the Titanic.
+- ```data=df```: Specifies the dataset (df) as the source for the plot.
+- ```plt.show()```: Displays the generated plot.
 
 ## Dataset cleaning: Box plot, Conditional Formatting, Null values
 
