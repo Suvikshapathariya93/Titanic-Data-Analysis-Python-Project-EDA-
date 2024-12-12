@@ -71,12 +71,12 @@ df.head(3)
 sns.heatmap(df.isnull())
 plt.show()
 ```
-- ```sns.heatmap```**: Creates a heatmap visualization using the Seaborn library.
+- ```sns.heatmap```: Creates a heatmap visualization using the Seaborn library.
 - ```df.isnull()```: Generates a DataFrame of the same shape as df, where each cell is True if the value is missing (NaN) and False otherwise.
 **The heatmap highlights missing data in the dataset, where True values are usually represented by brighter colors and False values by darker colors.**
 - ```plt.show()```: Displays the heatmap.
 
-
+2. Visualize the survival distribution across genders.
 ```python
 #Purpose :This code visualizes the survival distribution across genders, helping to identify gender-based survival trends in the Titanic dataset.
 sns.catplot(x='Survived', col='Sex', kind='count', data=df)
@@ -89,6 +89,7 @@ plt.show()
 - ```data=df```: Uses the Titanic dataset stored in the DataFrame df.
 - ```plt.show()```: Displays the generated plots.
 
+3. Visualize the survival distribution across passenger classes.
 ```python
 #Purpose : Visualizes the survival distribution across passenger classes to highlight the influence of class on survival.
 sns.countplot(x='Survived', hue='Pclass', data=df)
@@ -97,6 +98,19 @@ sns.countplot(x='Survived', hue='Pclass', data=df)
 - ```x='Survived'```: Sets the x-axis to the "Survived" column, showing survival status (0 = Did not survive, 1 = Survived).
 - ```hue='Pclass'```: Adds color coding by "Pclass" (Passenger Class: 1 = First, 2 = Second, 3 = Third), allowing differentiation by passenger class.
 - ```data=df```: Uses the Titanic dataset stored in the DataFrame df.
+
+4. Visualize the survival distribution acorss different genders and passenger classes together.
+```python
+#Purpose: This code visualizes the survival distribution across different genders and passenger classes. It helps identify patterns, such as whether survival rates were influenced by gender or passenger class.
+sns.catplot(x='Survived', col='Sex', hue='Pclass', kind='count', data=df)
+```
+- ```sns.catplot```: Creates a categorical plot using the Seaborn library.
+- ```x='Survived'```: Sets the x-axis to the "Survived" column, showing survival status (0 = Did not survive, 1 = Survived).
+- ```col='Sex'```: Separates the plot into two subplots, one for each gender ("Male" and "Female").
+- ```hue='Pclass'```: Adds color coding by "Pclass" (Passenger Class: 1 = First, 2 = Second, 3 = Third) to show survival distribution by class within each gender.
+- ```kind='count'```: Displays a count plot, showing the frequency of each survival status for each class and gender combination.
+- ```data=df```: Uses the Titanic dataset stored in the DataFrame df.
+- ```plt.show()```: Displays the generated plot.
 
 
 ## Dataset cleaning: Box plot, Conditional Formatting, Null values
