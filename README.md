@@ -138,7 +138,25 @@ sns.countplot(x = 'SibSp', data = df)
 
 ## EDA: Box plot, Conditional Formatting, Null values
 
-1. 
+1. Exploratory data analysis (EDA) for investigating relationships between variables like age and passenger class.
+```python
+#This plot provides insights into the age demographics of passengers within each class. For instance, it helps determine if certain classes had younger or older passengers on average.
+plt.figure(figsize=(12,6))
+sns.boxplot(x = 'Pclass', y = 'Age', data = df, palette = 'icefire')
+```
+- ```plt.figure(figsize=(12,6))```: Sets the figure size to 12 inches wide and 6 inches tall, ensuring the plot is well-proportioned and easy to read.
+- ```sns.boxplot```: Creates a box plot using the Seaborn library.
+- ```x='Pclass'```: Specifies the "Pclass" (Passenger Class) column for the x-axis, representing classes (1 = First, 2 = Second, 3 = Third).
+- ```y='Age'```: Specifies the "Age" column for the y-axis, showing the age distribution for each class.
+- ```data=df```: Uses the dataset df as the source for the plot.
+- ```palette='icefire'```: Applies the "icefire" color palette to the box plot for aesthetic styling.
+- ```plt.show()```: Displays the final plot.
+- **Shows statistical information such as:**
+  - Median age for each class.
+  - Interquartile range (IQR), which highlights the middle 50% of the data.
+  - Outliers (ages significantly above or below the usual range).
+ 
+2. Apply conditional formatting to fill null values.
 
 ## Machine Learning model: Logistic Regression, Prediction model
 
