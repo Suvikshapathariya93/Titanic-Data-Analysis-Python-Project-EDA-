@@ -138,6 +138,7 @@ sns.countplot(x = 'SibSp', data = df)
 
 ## EDA: Box plot, Conditional Formatting, Null values
 
+1. 
 
 ## Machine Learning model: Logistic Regression, Prediction model
 
