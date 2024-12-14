@@ -5,7 +5,7 @@
 - [Import Required Libraries](#import-required-libraries)
 - [Explored the Dataset](#explored-the-dataset)
 - [Extracting Insights from the Dataset through visualization](#extracting-insights-from-the-dataset-through-visualization)
-- [Dataset cleaning: Box plot, Conditional Formatting, Null values](#dataset-cleaning-box-plot-conditional-formatting-null-values)
+- [EDA: Box plot, Conditional Formatting, Null values](#EDA-box-plot-conditional-formatting-null-values)
 - [Machine Learning model: Logistic Regression, Prediction model](#machine-learning-model-logistic-regression-prediction-model)
 
 ## Introduction
@@ -136,7 +136,7 @@ sns.countplot(x = 'SibSp', data = df)
 - ```data=df```: Specifies the dataset (df) as the source for the plot.
 - ```plt.show()```: Displays the generated plot.
 
-## Dataset cleaning: Box plot, Conditional Formatting, Null values
+## EDA: Box plot, Conditional Formatting, Null values
 
 
 ## Machine Learning model: Logistic Regression, Prediction model
