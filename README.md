@@ -157,6 +157,35 @@ sns.boxplot(x = 'Pclass', y = 'Age', data = df, palette = 'icefire')
   - Outliers (ages significantly above or below the usual range).
  
 2. Apply conditional formatting to fill null values.
+```python
+#This function is designed to impute missing values in the "Age" column of the dataset based on the passenger class (Pclass).
+def  impute_age(cols):
+  Age = cols[0]
+  Pclass = cols[1]
+  if pd.isnull(Age):
+    if Pclass == 1:
+      return 37
+    elif Pclass == 2:
+      return 29
+    else : 
+      return 20
+  else: 
+   return Age
+```
+- Input:
+  - cols: A pair of values — Age (the passenger's age) and Pclass (the passenger class: 1, 2, or 3).
+- Logic:
+  - If the Age is missing ```(pd.isnull(Age))```, the function assigns an age based on the passenger class:
+    - Class 1: Replace missing age with 37 (assumed median age for 1st class passengers).
+    - Class 2: Replace missing age with 29.
+    - Class 3: Replace missing age with 20.
+    - If the Age is not missing, the function returns the original Age value.
+- Output: The function returns either the imputed age (based on class) or the existing age.
+
+- **Why Is This Useful?**
+   - Missing values in numerical columns like Age can cause issues in data analysis or machine learning models.
+   - Imputing missing values based on a related feature like Pclass ensures that the replacements are more accurate and meaningful compared to a single overall average.
+    - For example, 1st-class passengers may generally be older, while 3rd-class passengers may have younger ages, so this approach considers class-wise trends.
 
 ## Machine Learning model: Logistic Regression, Prediction model
 
