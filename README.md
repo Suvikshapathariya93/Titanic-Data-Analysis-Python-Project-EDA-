@@ -187,5 +187,21 @@ def  impute_age(cols):
    - Imputing missing values based on a related feature like Pclass ensures that the replacements are more accurate and meaningful compared to a single overall average.
     - For example, 1st-class passengers may generally be older, while 3rd-class passengers may have younger ages, so this approach considers class-wise trends.
 
+3. Apply above function
+```python
+df['Age'] = df[['Age', 'Pclass']].apply(impute_age, axis = 1)
+```
+- This line applies the ```impute_age``` function to the DataFrame ```df``` and replaces the missing values in the "Age" column.
+- It uses the values of the "Age" and "Pclass" columns as inputs to decide the replacement for missing ages.
+
+4. Drop the unwanted columns
+```python
+df.drop(['Sex', 'Embarked', 'Name', 'Ticket'], axis = 1, inplace = True)
+```
+- ```df.drop()```: The drop() function is used to remove specific rows or columns.
+- ```['Sex', 'Embarked', 'Name', 'Ticket']```: This is the list of column names that are being removed.
+- ```axis=1```: Specifies that the operation is performed on columns.
+- ```inplace=True```: Modifies the DataFrame in place, meaning no new DataFrame is created, and the original df is updated.
+
 ## Machine Learning model: Logistic Regression, Prediction model
 
