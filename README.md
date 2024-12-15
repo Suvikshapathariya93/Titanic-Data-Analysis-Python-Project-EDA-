@@ -219,4 +219,6 @@ X_train, X_test, Y_train, Y_test = train_test_split(df.drop('Survived', axis =1)
   - Training Set (X_train, Y_train): Used to train the machine learning model.
   - Testing Set (X_test, Y_test): Used to evaluate the model's performance on unseen data.
   - Ensures that the "Survived" column (target) is isolated for prediction purposes, while other columns are used as features.
+ 
+
 
