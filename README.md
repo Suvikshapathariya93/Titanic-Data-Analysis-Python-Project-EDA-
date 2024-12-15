@@ -204,6 +204,7 @@ df.drop(['Sex', 'Embarked', 'Name', 'Ticket'], axis = 1, inplace = True)
 - ```inplace=True```: Modifies the DataFrame in place, meaning no new DataFrame is created, and the original df is updated.
 
 ## Machine Learning model: Logistic Regression, Prediction model
+1. Split the data for model in into test and train
 ```python
 # Building a machine learning model
 from sklearn.model_selection import train_test_split
@@ -216,9 +217,109 @@ X_train, X_test, Y_train, Y_test = train_test_split(df.drop('Survived', axis =1)
 - ```random_state=101```: Ensures that the split is reproducible. The same split will occur every time the code is run with this random_state.
 
 - **Why This Line Is Useful**:
-  - Training Set (X_train, Y_train): Used to train the machine learning model.
-  - Testing Set (X_test, Y_test): Used to evaluate the model's performance on unseen data.
-  - Ensures that the "Survived" column (target) is isolated for prediction purposes, while other columns are used as features.
- 
+    - Training Set (X_train, Y_train): Used to train the machine learning model.
+    - Testing Set (X_test, Y_test): Used to evaluate the model's performance on unseen data.
+    - Ensures that the "Survived" column (target) is isolated for prediction purposes, while other columns are used as features.
 
+2. Feature scaling
+```python
+#This code standardizes the features in the training and testing datasets to have a mean of 0 and a standard deviation of 1, a crucial step in preprocessing for machine learning models.
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
+print(X_train)
+```
+- ```StandardScaler```: A preprocessing tool from sklearn that standardizes data by removing the mean and scaling to unit variance.
+- Create the Scaler Object (sc):
+  - ```sc``` = ```StandardScaler()```: Initializes the scaler.
+- Fit and Transform the Training Data:
+  - ```sc.fit_transform(X_train)```: Computes the mean and standard deviation of the X_train features.
+  - Standardizes the training data: The transformed ```X_train``` now has a mean of 0 and a standard deviation of 1 for each feature.
+- Transform the Testing Data:
+  - ```sc.transform(X_test)```: Uses the mean and standard deviation from the training data to standardize X_test.
+                                Ensures consistency between training and testing datasets.
+- Print Scaled Training Data: ```print(X_train)``` displays the standardized X_train dataset.
 
+- **Why This Line Is Useful:**
+    - Standardization Benefits:
+      - Helps models (like logistic regression, SVMs, or neural networks) perform better by ensuring features are on the same scale.
+      - Avoids bias caused by features with large magnitudes dominating others.
+    - Training-Testing Consistency: Ensures that the same scaling is applied to both the training and testing sets for reliable model evaluation.
+   
+3. Training the model
+```python
+#This code creates and trains a logistic regression model using the training dataset.
+Logistic regression is a classification algorithm used to predict discrete outcomes, such as whether a passenger survived or not in the Titanic dataset.
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression(random_state = 101)
+model.fit(X_train, Y_train)
+```
+- Import Logistic Regression:
+  - ```from sklearn.linear_model import LogisticRegression```: Imports the logistic regression model from scikit-learn's linear models library.
+- Create the Model:
+  - ```model = LogisticRegression(random_state=101)```: Initializes a logistic regression model.
+  - The ```random_state``` parameter ensures the process is reproducible when randomness is involved (e.g., in solvers or regularization).
+- Train the Model:
+  - ```model.fit(X_train, Y_train)```: Fits the logistic regression model to the training data.
+  - ```X_train```: The feature set (independent variables).
+  - ```Y_train```: The target variable (dependent variable, e.g., survival status).
+- What Happens During Training:
+  - The logistic regression model learns the relationship between the features in X_train and the target variable Y_train.
+  - It optimizes the coefficients for each feature to best predict the target outcome.
+
+- **Why This Line Is Useful:**
+  - Logistic regression is simple yet powerful for binary classification tasks (like predicting survival in the Titanic dataset).
+  - By training the model, it is ready to make predictions on new data (e.g., testing data).
+
+- **Output:**
+  - The model object is trained and contains the learned parameters (coefficients and intercepts) that can be used to make predictions. 
+
+4. Prediction with confusion matrix
+```python
+from sklearn.metrics import confusion_matrix, accuracy_score
+```
+- This code imports two evaluation metrics from sklearn to measure the performance of a machine learning model:
+  - ```confusion_matrix```: Provides a detailed breakdown of the model's predictions versus actual outcomes.
+  - ```accuracy_score```: Calculates the overall accuracy of the model's predictions.
+
+- **Explanation**
+  
+a. ```confusion_matrix```: A table that summarizes the performance of a classification model by showing the number of:
+  - True Positives (TP): Correctly predicted positives.
+  - True Negatives (TN): Correctly predicted negatives.
+  - False Positives (FP): Incorrectly predicted as positive.
+  - False Negatives (FN): Incorrectly predicted as negative.
+b. ```accuracy_score```: Measures the proportion of correct predictions out of the total predictions made by the model:
+  - ```accuracy = correct prediction/ Total prediction```
+  - Gives a single metric to evaluate the model's overall performance.
+
+- **Why This Line Is Useful:**
+  - Confusion Matrix:
+    - Provides detailed insight into the types of errors the model makes, which is especially useful for imbalanced datasets.
+    - Helps identify if the model is biased toward one class.
+  - Accuracy Score:
+    - Offers a quick way to understand how well the model performs overall.
+    - Easy to compute and interpret for balanced datasets.
+   
+- **Output:**
+  - ```Confusion Matrix```: A matrix showing the count of true and false predictions for each class.
+  - ```Accuracy Score```: A numeric value between 0 and 1 (or 0% to 100%) representing overall accuracy.
+
+```python
+#This code uses a trained machine learning model to make predictions on the testing dataset and evaluates the predictions using a confusion matrix.
+predictions = model.predict(X_test)
+
+accuracy = confusion_matrix(Y_test, predictions)
+accuracy
+
+accuracy = accuracy_score(Y_test, predictions)
+accuracy
+```
+- **Making Predictions**: Using the model to predict the target values for the test dataset.
+- **Confusion Matrix**: Generating a matrix to analyze the performance by comparing actual and predicted outcomes.
+- **Accuracy Score**: Calculating the overall percentage of correct predictions.
+
+- **Why This Line Is Useful:**
+  - Confusion Matrix: Provides detailed insight into the types of predictions (correct vs incorrect) made by the model.
+  - Accuracy Score: Offers a quick and intuitive measure of the model’s performance as a percentage or decimal.
