@@ -204,4 +204,19 @@ df.drop(['Sex', 'Embarked', 'Name', 'Ticket'], axis = 1, inplace = True)
 - ```inplace=True```: Modifies the DataFrame in place, meaning no new DataFrame is created, and the original df is updated.
 
 ## Machine Learning model: Logistic Regression, Prediction model
+```python
+# Building a machine learning model
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(df.drop('Survived', axis =1), df['Survived'], test_size = 0.30, random_state = 101)
+```
+- ```train_test_split()```: A function from sklearn used to split the data into training and testing subsets.
+- ```df.drop('Survived', axis=1)```: Removes the target column (Survived) from the DataFrame to create the feature matrix (X).
+- ```df['Survived']```: Extracts the target variable (Survived) from the DataFrame.
+- ```test_size=0.30```: Specifies that 30% of the data will be used for testing, while the remaining 70% will be used for training.
+- ```random_state=101```: Ensures that the split is reproducible. The same split will occur every time the code is run with this random_state.
+
+- **Why This Line Is Useful**:
+  - Training Set (X_train, Y_train): Used to train the machine learning model.
+  - Testing Set (X_test, Y_test): Used to evaluate the model's performance on unseen data.
+  - Ensures that the "Survived" column (target) is isolated for prediction purposes, while other columns are used as features.
 
