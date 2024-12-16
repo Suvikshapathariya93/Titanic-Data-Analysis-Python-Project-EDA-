@@ -25,6 +25,8 @@ Highlight important factors that influenced survival, such as gender, age, and c
 - Library : Pandas, Numpy, Matplotlib, Seaborn
 - IDE : Google colab
 
+I'm open to feedback and discussions! Reach out with any questions, suggestions, or collaboration ideas. [LinkedIn | Suviksha Pathariya](https://www.linkedin.com/in/suviksha-pathariya/)
+
 ## Import Required Libraries
 
 ```python
