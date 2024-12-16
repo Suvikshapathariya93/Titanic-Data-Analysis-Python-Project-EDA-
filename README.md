@@ -25,8 +25,6 @@ Highlight important factors that influenced survival, such as gender, age, and c
 - Library : Pandas, Numpy, Matplotlib, Seaborn
 - IDE : Google colab
 
-I'm open to feedback and discussions! Reach out with any questions, suggestions, or collaboration ideas. [LinkedIn | Suviksha Pathariya](https://www.linkedin.com/in/suviksha-pathariya/)
-
 ## Import Required Libraries
 
 ```python
@@ -325,3 +323,9 @@ accuracy
 - **Why This Line Is Useful:**
   - Confusion Matrix: Provides detailed insight into the types of predictions (correct vs incorrect) made by the model.
   - Accuracy Score: Offers a quick and intuitive measure of the model’s performance as a percentage or decimal.
+
+**I'm open to feedback and discussions! Reach out with any questions, suggestions, or collaboration ideas.** [LinkedIn | Suviksha Pathariya](https://www.linkedin.com/in/suviksha-pathariya/)
+
+**Don’t forget to star ⭐ and follow this repository if you found it useful!**
+
+**Stay tuned for more features and updates coming soon!**
