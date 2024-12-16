@@ -325,8 +325,10 @@ accuracy
   - Accuracy Score: Offers a quick and intuitive measure of the model’s performance as a percentage or decimal.
 
 
-**I'm open to feedback and discussions! Reach out with any questions, suggestions, or collaboration ideas.** [LinkedIn | Suviksha Pathariya](https://www.linkedin.com/in/suviksha-pathariya/)
+✨ **I'm open to feedback and discussions! Reach out with any questions, suggestions, or collaboration ideas.** ✨
 
-**Don’t forget to star ⭐ and follow this repository if you found it useful!**
+👉 [LinkedIn | Suviksha Pathariya](https://www.linkedin.com/in/suviksha-pathariya/) 
 
-**Stay tuned for more features and updates coming soon!**
+⭐ **Don’t forget to star and follow this repository if you found it useful!** ⭐
+
+💡 **Stay tuned for more features and updates coming soon!** 💡
