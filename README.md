@@ -20,10 +20,12 @@ Identify patterns and trends in passenger demographics and survival rates.
 Visualize key insights using various Python libraries.
 Highlight important factors that influenced survival, such as gender, age, and class.
 
-**Tools Used🛠️:**
+**🛠️ Tools Used :**
 - Language : Python
 - Library : Pandas, Numpy, Matplotlib, Seaborn
 - IDE : Google colab
+
+**🗂️ Dataset :** [Titanic Dataset](https://www.kaggle.com/datasets/brendan45774/test-file?resource=download)
 
 ## Import Required Libraries
 
